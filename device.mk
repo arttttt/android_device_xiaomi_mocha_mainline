@@ -19,9 +19,6 @@ TARGET_SCREEN_HEIGHT := 2048
 TARGET_SCREEN_WIDTH := 1536
 TARGET_TEGRA_VERSION := t124
 
-$(call inherit-product, frameworks/native/build/phone-xxhdpi-2048-hwui-memory.mk)
-
-
 $(call inherit-product-if-exists, vendor/nvidia/shield/mocha.mk)
 
 BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
