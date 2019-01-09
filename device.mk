@@ -38,8 +38,10 @@ PRODUCT_COPY_FILES := \
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck fsck.f2fs mkfs.f2fs
-# Packaging
-BLOCK_BASED_OTA := false
+
+# Ramdisk
+PRODUCT_PACKAGES += \
+    fstab.mocha
 
 BOARD_USES_LIBDRM := true
 USE_DRM_HWCOMPOSER := true
