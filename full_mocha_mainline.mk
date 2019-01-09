@@ -29,7 +29,7 @@ $(call inherit-product, device/xiaomi/mocha_mainline/device.mk)
 # Set those variables here to overwrite the inherited values.
 TARGET_VENDOR := Xiaomi
 PRODUCT_DEVICE := mocha_mainline
-PRODUCT_NAME := full_mocha_mainline
+PRODUCT_NAME := full_mocha
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_MODEL := MI PAD

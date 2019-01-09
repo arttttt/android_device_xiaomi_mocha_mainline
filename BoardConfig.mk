@@ -17,6 +17,8 @@
 # This variable is set first, so it can be overridden
 # by BoardConfigVendor.mk
 
+DEV_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
+
 TARGET_SPECIFIC_HEADER_PATH := $(DEV_DIR)/include
 DEVICE_MANIFEST_FILE += $(DEV_DIR)/manifest.xml
 BOARD_SEPOLICY_DIRS += $(DEV_DIR)/sepolicy
@@ -54,8 +56,6 @@ BOARD_KERNEL_TAGS_OFFSET := 0x00000100
 
 TARGET_KERNEL_SOURCE := kernel/xiaomi/mocha_mainline
 TARGET_KERNEL_CONFIG := mocha_android_defconfig
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/linaro-4.9.4/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-linux-gnueabihf-
 BOARD_KERNEL_IMAGE_NAME := zImage
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset $(BOARD_RAMDISK_OFFSET) --tags_offset $(BOARD_KERNEL_TAGS_OFFSET)
 BOARD_CUSTOM_BOOTIMG_MK := $(DEV_DIR)/mkbootimg.mk

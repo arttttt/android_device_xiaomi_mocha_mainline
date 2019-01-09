@@ -14,6 +14,8 @@
 # limitations under the License.
 #
 
+DEV_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
+
 PRODUCT_AAPT_CONFIG += xlarge large
 TARGET_SCREEN_HEIGHT := 2048
 TARGET_SCREEN_WIDTH := 1536
