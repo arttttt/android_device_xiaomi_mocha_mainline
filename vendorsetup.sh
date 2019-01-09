@@ -1,1 +1,1 @@
-add_lunch_combo aosp_mocha_mainline-userdebug
+add_lunch_combo mocha_mainline-userdebug

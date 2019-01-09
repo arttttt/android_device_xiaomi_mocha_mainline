@@ -14,4 +14,4 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_mocha_mainline.mk
+    $(LOCAL_DIR)/mocha_mainline.mk

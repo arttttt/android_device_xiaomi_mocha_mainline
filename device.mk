@@ -25,9 +25,26 @@ BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 TARGET_USERIMAGES_USE_F2FS := true
 PRODUCT_CHARACTERISTICS := tablet
 
+BUILD_FINGERPRING := test
+
+# HIDL HALs
+$(call inherit-product, $(DEV_DIR)/hidl.mk)
+
+PRODUCT_COPY_FILES := \
+	$(LOCAL_PATH)/drm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/drm.rc
+
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck fsck.f2fs mkfs.f2fs
 # Packaging
 BLOCK_BASED_OTA := false
 
+BOARD_USES_LIBDRM := true
+USE_DRM_HWCOMPOSER := true
+
+ENABLE_LIBDRM := true
+BOARD_GPU_DRIVERS ?= tegra nouveau
+PRODUCT_PACKAGES += \
+    hwcomposer.drm \
+    libdrm \
+    libGLES_mesa
