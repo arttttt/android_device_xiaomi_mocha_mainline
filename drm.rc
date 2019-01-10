@@ -12,6 +12,7 @@ on early-boot && property:ro.kernel.qemu=0
     chown graphics graphics /sys/kernel/debug/sync/info
 
     setprop ro.hardware.gralloc gbm
+    setprop gralloc.gbm.device /dev/dri/renderD129
     setprop ro.hardware.hwcomposer drm
     setprop debug.sf.no_hw_vsync 1
     setprop hwc.drm.device /dev/dri/card1
