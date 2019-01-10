@@ -14,5 +14,6 @@ on early-boot && property:ro.kernel.qemu=0
     setprop ro.hardware.gralloc gbm
     setprop ro.hardware.hwcomposer drm
     setprop debug.sf.no_hw_vsync 1
+    setprop hwc.drm.device /dev/dri/card1
     setprop hwc.drm.use_framebuffer_target 1
     setprop hwc.drm.use_overlay_planes 0
