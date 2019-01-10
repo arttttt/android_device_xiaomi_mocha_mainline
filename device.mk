@@ -42,6 +42,7 @@ PRODUCT_PACKAGES += \
 # Ramdisk
 PRODUCT_PACKAGES += \
 	fstab.tn8 \
+	init.tn8.rc \
 	ueventd.tn8.rc
 
 BOARD_USES_LIBDRM := true

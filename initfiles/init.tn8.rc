@@ -1,0 +1,11 @@
+on fs
+	mount_all /fstab.tn8
+
+on post-fs
+    mkdir /cache/logs 0775 system log
+    start persistentLogging
+
+service persistentLogging /system/bin/logcat -r 1024 -n 9 -v threadTime -f /cache/logs/log
+    user system
+    group system log
+    disabled
