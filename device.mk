@@ -41,7 +41,8 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
-    fstab.mocha
+	fstab.tn8 \
+	ueventd.tn8.rc
 
 BOARD_USES_LIBDRM := true
 USE_DRM_HWCOMPOSER := true
@@ -50,5 +51,6 @@ ENABLE_LIBDRM := true
 BOARD_GPU_DRIVERS ?= tegra nouveau
 PRODUCT_PACKAGES += \
     hwcomposer.drm \
+    gralloc.gbm \
     libdrm \
     libGLES_mesa
