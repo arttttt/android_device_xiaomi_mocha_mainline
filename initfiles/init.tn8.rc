@@ -1,9 +1,15 @@
 on fs
-	mount_all /fstab.tn8
-
+    mount_all /fstab.tn8
+	          
 on post-fs
+    swapon_all /fstab.tn8
+
     mkdir /cache/logs 0775 system log
     start persistentLogging
+
+on boot
+    # enable GPU dvfs
+    write /sys/class/drm/card0/device/pstate auto
 
 service persistentLogging /system/bin/logcat -r 1024 -n 9 -v threadTime -f /cache/logs/log
     user system
