@@ -33,17 +33,21 @@ BUILD_FINGERPRING := test
 $(call inherit-product, $(DEV_DIR)/hidl.mk)
 
 PRODUCT_COPY_FILES := \
-	$(LOCAL_PATH)/drm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/drm.rc
+    $(DEV_DIR)/drm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/drm.rc
 
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck fsck.f2fs mkfs.f2fs
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(DEV_DIR)/overlay
+
 # Ramdisk
 PRODUCT_PACKAGES += \
-	fstab.tn8 \
-	init.tn8.rc \
-	ueventd.tn8.rc
+    fstab.tn8 \
+    init.tn8.rc \
+    ueventd.tn8.rc
 
 BOARD_USES_LIBDRM := true
 USE_DRM_HWCOMPOSER := true

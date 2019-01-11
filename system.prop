@@ -1,0 +1,4 @@
+wifi.interface=wlan0
+ap.interface=wlan0
+ro.sf.lcd_density=320
+ro.radio.noril=yes
