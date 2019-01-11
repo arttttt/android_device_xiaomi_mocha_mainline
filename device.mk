@@ -49,6 +49,17 @@ PRODUCT_PACKAGES += \
     init.tn8.rc \
     ueventd.tn8.rc
 
+# Wifi
+PRODUCT_COPY_FILES += \
+    $(DEV_DIR)/wifi/dhcpcd.conf:system/etc/dhcpcd/dhcpcd.conf \
+    $(DEV_DIR)/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
+
+$(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/config/config-bcm.mk)
+PRODUCT_PACKAGES += \
+    hostapd \
+    wpa_supplicant \
+    wpa_supplicant.conf
+
 BOARD_USES_LIBDRM := true
 USE_DRM_HWCOMPOSER := true
 

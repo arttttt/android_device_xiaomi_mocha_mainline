@@ -26,3 +26,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	android.hardware.renderscript@1.0-impl \
 	android.hardware.renderscript@1.0-service
+
+# WiFi
+PRODUCT_PACKAGES += \
+	android.hardware.wifi@1.0-service \
+	wificond
