@@ -1,3 +1,20 @@
+on early-init
+    mount debugfs debugfs /sys/kernel/debug
+    chmod 755 /sys/kernel/debug
+    chmod 755 /sys/kernel/debug/sync
+    chown graphics graphics /sys/kernel/debug/sync/sw_sync
+    chmod 777 /sys/kernel/debug/sync/sw_sync
+    chown graphics graphics /sys/kernel/debug/sync/info
+
+on init
+    setprop ro.hardware.gralloc gbm
+    setprop gralloc.gbm.device /dev/dri/renderD129
+    setprop ro.hardware.hwcomposer drm
+    setprop hwc.drm.device /dev/dri/card1
+
+on early-init
+    chmod 777 /sys/kernel/debug/tracing/trace_marker
+
 on fs
     mount_all /fstab.tn8
 	          

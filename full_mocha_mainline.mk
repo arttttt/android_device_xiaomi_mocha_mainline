@@ -24,11 +24,11 @@
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 # Inherit from xiaomi device
-$(call inherit-product, device/xiaomi/mocha_mainline/device.mk)
+$(call inherit-product, device/xiaomi/mocha/device.mk)
 
 # Set those variables here to overwrite the inherited values.
 TARGET_VENDOR := Xiaomi
-PRODUCT_DEVICE := mocha_mainline
+PRODUCT_DEVICE := mocha
 PRODUCT_NAME := full_mocha
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MANUFACTURER := Xiaomi

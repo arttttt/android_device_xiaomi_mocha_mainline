@@ -30,9 +30,6 @@ PRODUCT_CHARACTERISTICS := tablet
 # HIDL HALs
 $(call inherit-product, $(DEV_DIR)/hidl.mk)
 
-PRODUCT_COPY_FILES := \
-    $(DEV_DIR)/drm.rc:$(TARGET_COPY_OUT_VENDOR)/etc/init/drm.rc
-
 # Filesystem management tools
 PRODUCT_PACKAGES += \
     e2fsck fsck.f2fs mkfs.f2fs
@@ -68,6 +65,8 @@ PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
     wpa_supplicant.conf
+
+LOCAL_OVERRIDES_PACKAGES := Bluetooth libbluetooth_jni
 
 BOARD_USES_LIBDRM := true
 USE_DRM_HWCOMPOSER := true

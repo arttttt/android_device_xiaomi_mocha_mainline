@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ifneq ($(filter mocha_mainline,$(TARGET_DEVICE)),)
+ifneq ($(filter mocha,$(TARGET_DEVICE)),)
 
 LOCAL_PATH := $(call my-dir)
 

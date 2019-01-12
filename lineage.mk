@@ -1,12 +1,12 @@
 
 # Inherit device configuration for mocha.
-$(call inherit-product, device/xiaomi/mocha_mainline/full_mocha_mainline.mk)
+$(call inherit-product, device/xiaomi/mocha/full_mocha_mainline.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/lineage/config/common_mini_tablet_wifionly.mk)
 
-PRODUCT_NAME := lineage_mocha_mainline
-PRODUCT_DEVICE := mocha_mainline
+PRODUCT_NAME := lineage_mocha
+PRODUCT_DEVICE := mocha
 BOARD_VENDOR := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-nvidia
