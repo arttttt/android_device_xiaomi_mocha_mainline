@@ -73,7 +73,8 @@ USE_DRM_HWCOMPOSER := true
 
 ENABLE_LIBDRM := true
 BOARD_GPU_DRIVERS ?= tegra nouveau
+BOARD_DRM_HWCOMPOSER_BUFFER_IMPORTER := minigbm
 PRODUCT_PACKAGES += \
     hwcomposer.drm \
-    gralloc.gbm \
+    gralloc.minigbm \
     libGLES_mesa
