@@ -4,7 +4,13 @@ on early-init
     chmod 755 /sys/kernel/debug/sync
     chown graphics graphics /sys/kernel/debug/sync/sw_sync
     chmod 777 /sys/kernel/debug/sync/sw_sync
+    chmod 777 /dev/fb0
+    chmod 777 /dev/dri/*
     chown graphics graphics /sys/kernel/debug/sync/info
+
+on boot
+    write /sys/class/drm/card0/device/pstate auto
+    write /sys/class/drm/card1/device/pstate auto
 
 on init
     setprop ro.hardware.gralloc gbm
